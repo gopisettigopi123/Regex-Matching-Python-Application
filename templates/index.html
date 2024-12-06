@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+</head>
+<body>
+    <h1>Regex Matcher</h1>
+    <form action="/results" method="post">
+        <label for="test_string">Test String:</label><br>
+        <textarea id="test_string" name="test_string" rows="4" cols="50">{{ test_string or '' }}</textarea><br><br>
+
+        <label for="regex">Regex:</label><br>
+        <input type="text" id="regex" name="regex" value="{{ regex or '' }}"><br><br>
+
+        <button type="submit">Find Matches</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% elif matches %}
+        <h2>Matches:</h2>
+        <ul>
+            {% for match in matches %}
+                <li>{{ match }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h2>Validate Email</h2>
+    <form action="/validate-email" method="post">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <button type="submit">Validate</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <h1>Email Validation</h1>
+    <p>Email: {{ email }}</p>
+    {% if is_valid %}
+        <p style="color: green;">This is a valid email address!</p>
+    {% else %}
+        <p style="color: red;">This is not a valid email address.</p>
+    {% endif %}
+    <a href="/">Back to Regex Matcher</a>
+</body>
+</html>
